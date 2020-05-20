@@ -19,6 +19,8 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IMeasurab
 public class SimplePagerTitleView extends TextView implements IMeasurablePagerTitleView {
     protected int mSelectedColor;
     protected int mNormalColor;
+    protected float mSelectedTextSize;
+    protected float mNormalTextSize;
 
     public SimplePagerTitleView(Context context) {
         super(context, null);
@@ -36,11 +38,13 @@ public class SimplePagerTitleView extends TextView implements IMeasurablePagerTi
     @Override
     public void onSelected(int index, int totalCount) {
         setTextColor(mSelectedColor);
+        setTextSize(mSelectedTextSize);
     }
 
     @Override
     public void onDeselected(int index, int totalCount) {
         setTextColor(mNormalColor);
+        setTextSize(mNormalTextSize);
     }
 
     @Override
@@ -113,5 +117,21 @@ public class SimplePagerTitleView extends TextView implements IMeasurablePagerTi
 
     public void setNormalColor(int normalColor) {
         mNormalColor = normalColor;
+    }
+
+    public float getmSelectedTextSize() {
+        return mSelectedTextSize;
+    }
+
+    public void setmSelectedTextSize(float mSelectedTextSize) {
+        this.mSelectedTextSize = mSelectedTextSize;
+    }
+
+    public float getmNormalTextSize() {
+        return mNormalTextSize;
+    }
+
+    public void setmNormalTextSize(float mNormalTextSize) {
+        this.mNormalTextSize = mNormalTextSize;
     }
 }
